@@ -10,13 +10,13 @@ if(isset($_POST['submit'])){
     // $mtr = firter_var($mtr, FILTER_SANITIZE_STRING);
 
     $mail = $_POST['mail'];
-    $mail = filter_var($mail, FILTER_SANITIZE_STRING);
+    // $mail1 = filter_var($mail, FILTER_SANITIZE_STRING);
 
     // $role = $_POST['role'];
     // $role = filter_var($role, FILTER_SANITIZE_STRING);
 
-    $mdp = md5($_POST['mdp']);
-    $mdp = filter_var($mdp, FILTER_SANITIZE_STRING);
+    $mdp =$_POST['mdp'];
+    // $mdp1 = filter_var($mdp, FILTER_SANITIZE_STRING);
     
 
 
@@ -28,14 +28,14 @@ if(isset($_POST['submit'])){
 
 
     if($select->rowCount() > 0){
-       if($row['roles'== 'admin']){
+       if($row['roles'] == 'admin'){
         $_SESSION [ 'admin_id'] = $row['id'];
-        header('location:admin_page.php');
+        header('Location:admin_page.php');
        }
        
-       elseif($row['roles'== 'user']){
+       elseif($row['roles'] == 'user'){
         $_SESSION [ 'user_id'] = $row['id'];
-        header('location:user_page.php');
+        header('Location:user_page.php');
 
 
        }
@@ -90,9 +90,9 @@ if(isset($_POST['submit'])){
                 <!-- <input type="text" placeholder="Nom" class="box"name="nom"> -->
                 <!-- <input type="text" placeholder="Prénom" class="box" name="prenom"> -->
                 <!-- <input type="text" placeholder="Matricule" class="box" name="mtr"> -->
-                <input type="mail" placeholder="Email"class="box" name="mail">
+                <input type="email" placeholder="Email"class="box" name="mail">
                 <!-- <input type="text" placeholder="Role"class="box" name="role"> -->
-                <input type="password"placeholder="Mot de passe" class="box" name="mdp">
+                <input type="password" placeholder="Mot de passe" class="box" name="mdp">
                 <!-- <input type="password"placeholder="Confirmer Mot de passe"class= "box" name="mdp2"> -->
                 <!-- <input type="file" name="image" class ="box"accept= "image/jpg, image/png, image/jpeg"> -->
                 

@@ -1,10 +1,10 @@
 <?php 
-$db_name = "mysql:host=localhost;dbname=bds";
-$username= "root";
+$db_name ="mysql:host=localhost;dbname=mf";
+$username="root";
 $password ="";
 
 
-$conn = new PDO($db_name, $username, $password);
+$conn = new PDO($db_name,$username,$password);
 
 
 
